@@ -19,8 +19,9 @@ public class Category {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "category")
-    private List<Product> products;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
     public Category(String name) {
         this.name = name;
